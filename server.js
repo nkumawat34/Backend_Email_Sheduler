@@ -23,7 +23,7 @@ const transporter = nodemailer.createTransport({
 function sendEmail(email) {
     // Define email options
     const mailOptions = {
-        from: 'nkumawat34@gmail.com', // Sender address (should be your Gmail address)
+        from: 'nkumawat34@gmail.com', // Sender address 
         to: email.email, // Recipient address
         subject: email.subject, // Subject line
         text: email.body // Plain text body
