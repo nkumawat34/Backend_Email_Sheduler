@@ -9,7 +9,8 @@ app = express();
 
 app.get("/email", (req, res) => {
     
-    const emails=req.query.param1
+    const emails=req.query.param1;
+    const senderEmail=req.query.param2
    // Create a transporter using Gmail's SMTP
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -23,7 +24,7 @@ const transporter = nodemailer.createTransport({
 function sendEmail(email) {
     // Define email options
     const mailOptions = {
-        from: 'nkumawat34@gmail.com', // Sender address 
+        from: senderEmail, // Sender address 
         to: email.email, // Recipient address
         subject: email.subject, // Subject line
         text: email.body // Plain text body
